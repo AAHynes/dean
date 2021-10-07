@@ -1,27 +1,25 @@
 <html>
   <body>
-    <input id="start"placeholder="starting point">
-    <br/>
-    <input id="limit"placeholder="limit">
-    <br/>
-    <nput id="increment"placeholder="increment">
-      <br/>
-      <button onclick="Display()">
-          Display
-         </button>
-      <a id="outbox"></a>
+    <input id="start" placeholder="starting point" />
+    <br />
+    <input id="limit" placeholder="limit" />
+    <br />
+    <input id="increment" placeholder="increment" />
+    <br />
+    <button onclick="Display()">
+      Display
+    </button>
+    <a id="outbox"></a>
   </body>
 </html>
-  
-  <script>
+
+<script>
   function display(){
     counter=parseInt(document.getElementById("start").value)
     limit=parseInt(document.getElementById("Limit").value)
-  
-  
-  
-  
-  
-  
-  
-  </script>
+    while(counter<limit){
+    increment=parseInt(document.getElementById("increment").value)
+      counter=counter+increment
+      document.getElementById("outbox").innerHTML+<counter + <br/>
+    }
+</script>
