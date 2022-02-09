@@ -73,12 +73,13 @@ div.content {
   <li><a href="contact.html">Contact</a></li>
   <li><a href="about.html">About</a></li>
   <li><a href="login.html">Login</a></li>
+  <li><a href="profile.html">Profile</a></li>
 </ul>
   <div>
 
  <form action="/action_page.php">
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email"><br><br>
+  <label for="username">Username:</label>
+  <input type="username" id="username" name="username"><br><br>
   <label for="pwd">Password:</label>
   <input type="password" id="pwd" name="pwd" minlength="8"><br><br>
   <input type="submit">
@@ -92,6 +93,167 @@ div.content {
 </html>
   
   <script>
+    var myInput = document.getElementById("psw"); 
+
+var letter = document.getElementById("letter"); 
+
+var capital = document.getElementById("capital"); 
+
+var number = document.getElementById("number"); 
+
+var length = document.getElementById("length"); 
+
+var username = document.getElementById("username"); 
+
+ 
+
+// When the user clicks on the password field, show the message box 
+
+myInput.onfocus = function() { 
+
+  document.getElementById("message").style.display = "block"; 
+
+} 
+
+ 
+
+// When the user clicks outside of the password field, hide the message box 
+
+myInput.onblur = function() { 
+
+  document.getElementById("message").style.display = "none"; 
+
+} 
+
+ 
+
+// When the user starts to type something inside the password field 
+
+myInput.onkeyup = function() { 
+
+  // Validate lowercase letters 
+
+  var lowerCaseLetters = /[a-z]/g; 
+
+  if(myInput.value.match(lowerCaseLetters)) {   
+
+    letter.classList.remove("invalid"); 
+
+    letter.classList.add("valid"); 
+
+  } else { 
+
+    letter.classList.remove("valid"); 
+
+    letter.classList.add("invalid"); 
+
+  } 
+
+   
+
+  // Validate capital letters 
+
+  var upperCaseLetters = /[A-Z]/g; 
+
+  if(myInput.value.match(upperCaseLetters)) {   
+
+    capital.classList.remove("invalid"); 
+
+    capital.classList.add("valid"); 
+
+  } else { 
+
+    capital.classList.remove("valid"); 
+
+    capital.classList.add("invalid"); 
+
+  } 
+
+ 
+
+  // Validate numbers 
+
+  var numbers = /[0-9]/g; 
+
+  if(myInput.value.match(numbers)) {   
+
+    number.classList.remove("invalid"); 
+
+    number.classList.add("valid"); 
+
+  } else { 
+
+    number.classList.remove("valid"); 
+
+    number.classList.add("invalid"); 
+
+  } 
+
+   
+
+  // Validate length 
+
+  if(myInput.value.length >= 8) { 
+
+    length.classList.remove("invalid"); 
+
+    length.classList.add("valid"); 
+
+  } else { 
+
+    length.classList.remove("valid"); 
+
+    length.classList.add("invalid"); 
+
+  } 
+
+} 
+
+ 
+
+ function getData() { 
+
+          var passw = /Pass1234/; 
+
+ 
+
+          var userN = "JaneDoe"; 
+
+ 
+
+          if (myInput.value.match(passw) && username.value.match(userN)) { 
+
+             
+
+              // worked with "" also worked with == "JaneDoe" 
+
+ 
+
+              alert("You have successfully logged in"); 
+
+             
+
+        location.replace("profile.html"); 
+
+             
+
+          } else { 
+
+            alert("Incorrect, please try again"); 
+
+          } 
+
+ 
+
+          document.getElementById("username").value = ""; 
+
+ 
+
+          document.getElementById("psw").value = ""; 
+
+       > 
+
+
     
     
   </script>
